@@ -36,7 +36,7 @@ The Program could be used on 2 Simple wasy
 	OutFile: this will be the output file if you type "same" it will override the original file
 	and by default is set to encrypted_{name of the file}
 	
-		Examples in the Video: 
+		Examples in the Video: https://github.com/Mel4221/QTLSecure/blob/main/README.md#video-tutorial
 	Decrypting: 
 	
 	This Requires literally the same steps from encrypting but remember to select the file that is encrypted because it could fail if the file selected is the incorrect one 
