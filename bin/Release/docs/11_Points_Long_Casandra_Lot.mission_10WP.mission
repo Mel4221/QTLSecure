@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mission>
+	<version value="2.3-pre8"/>
+	<mwp cx="-69.6974049" cy="18.4659589" home-x="0" home-y="0" zoom="16.51"/>
+	<missionitem no="1" action="WAYPOINT" lat="18.4637834" lon="-69.6994602" alt="10" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="2" action="WAYPOINT" lat="18.4654797" lon="-69.6994817" alt="20" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="3" action="WAYPOINT" lat="18.4654458" lon="-69.700333" alt="30" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="4" action="WAYPOINT" lat="18.4638445" lon="-69.7003401" alt="40" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="5" action="WAYPOINT" lat="18.463797" lon="-69.6998894" alt="50" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="6" action="WAYPOINT" lat="18.4655544" lon="-69.699918" alt="60" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="7" action="WAYPOINT" lat="18.4669261" lon="-69.6998706" alt="70" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="8" action="WAYPOINT" lat="18.4680258" lon="-69.699846" alt="80" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="9" action="WAYPOINT" lat="18.468036" lon="-69.7003864" alt="90" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="10" action="WAYPOINT" lat="18.4677975" lon="-69.7003971" alt="50" parameter1="0" parameter2="0" parameter3="0" flag="0"/>
+	<missionitem no="11" action="RTH" lat="0" lon="0" alt="0" parameter1="0" parameter2="0" parameter3="0" flag="165"/>
+</mission>

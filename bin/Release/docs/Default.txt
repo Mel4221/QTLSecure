@@ -1,0 +1,23 @@
+Running - OS: <strong>Windows</strong>, Chrome: <strong>77.0.3865.120</strong>, Configurator: <strong>1.2.0</strong>
+Connecting to: manual
+Failed to connect to the port.
+SERIAL: Failed to open serial port
+Failed to open serial port
+<span style="color: red">Failed</span> to open serial port
+Last used port wasn't saved "yet", auto-select disabled.
+Connecting to: COM3
+SERIAL: Connection opened with ID: 1, Baud: 115200
+Serial port <span style="color: green">successfully</span> opened with ID: 1
+MultiWii API version <span style="color: green">received</span> - <strong>2.5.0</strong>
+Flight controller info, identifier: <strong>INAV</strong>, version: <strong>6.1.0</strong>
+Running firmware released on: <strong>May 11 2023 13:14:43</strong>
+Board: <strong>M41T</strong>, version: <strong>0</strong>
+Unique device ID <span style="color: green">received</span> - <strong>0x3800295547500e20333332</strong>
+Reading setup
+sending cmd_DeviceInitFlash 0 0
+received cmd_DeviceInitFlash ACK_OK 0 178,232,100,1
+sending cmd_DeviceRead 1a00 112
+received cmd_DeviceRead ACK_OK 1a00 16,7,33,255,255,255,255,255,255,9,255,1,255,85,170,1,255,255,255,255,255,3,255,255,255,37,208,40,80,4,255,2,255,122,255,7,1,255,255,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,35,65,95,72,95,50,53,35,32,32,32,32,32,32,32,32,35,66,76,72,69,76,73,36,69,70,77,56,66,50,49,35,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32
+sending cmd_DeviceReset 0 0
+received cmd_DeviceReset ACK_OK 0 0
+Reading setup <span style="color: green">finished</span>
