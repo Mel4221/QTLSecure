@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("HP")]
 [assembly: AssemblyProduct("QTLSecure")]
 [assembly: AssemblyCopyright("Copyright © HP 2023")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("MIT")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
