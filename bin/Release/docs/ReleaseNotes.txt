@@ -1,6 +1,0 @@
-This version was ported to the .NET7 due to some issues while trying to keep it on the .net Freamwork version , this version 
-contains the same list of benefits from the previus one , and some extra updates on the fallowing 
-MiniDB : bugs fixed , 
-KeyManager:  allwos to controll  data on a Key and value format ,
-Hash Fuctions for files and data builtin , 
-and more bugs were fixed 

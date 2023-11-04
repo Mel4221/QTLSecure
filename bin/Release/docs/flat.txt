@@ -1,5 +1,0 @@
-BookID,BookAddedDate,BookName,BookAuthor,BookCreatedDate,BookComments
-1,2023-06-14 14:39:00.130000000,C# For Dummies,The Good Programer,1900-01-01 00:00:00,IS A GOOD BOOK
-1112,2023-06-14 14:52:08.887000000,Html5 From 0,Mart Alen,1900-01-08 00:00:00,no comments
-2223,2023-06-14 14:56:29.260000000,Javascript for human ,By The Robot,1900-01-08 00:00:00,is very good
-3334,2023-06-14 14:57:25.120000000,Java is not dificult ,Java Creator,1900-01-08 00:00:00,IS A GOOD BOOK
