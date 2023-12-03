@@ -14,6 +14,74 @@ namespace QTLSecure
     public class Program
     {
         public static string CurrentJobStatus;
+
+        static void PrintHelp(){
+			Get.Yellow("The Format is the fallowing: ");
+			Get.Yellow("Encription");
+			Get.White();
+			Console.Write("File ");
+			Get.Green();
+			Console.Write("-e ");
+			Get.Blue();
+			Console.Write("Password ");
+			Get.Yellow();
+			Console.Write("IV ");
+			Get.Red();
+			Console.Write("OutFile");
+			Get.WriteL("");
+			Get.Yellow("Decrypting");
+			Get.White();
+			Console.Write("File ");
+			Get.Green();
+			Console.Write("-d ");
+			Get.Blue();
+			Console.Write("Password ");
+			Get.Yellow();
+			Console.Write("IV ");
+			Get.Red();
+			Console.Write("OutFile");
+			Console.WriteLine("\n");
+			Get.White();
+			Get.WriteL("File: The fist argument is the file that you wish to encrypt");
+			Get.Green();
+			Get.WriteL("-e or -d: \n-e = Encrypt\n-d = Decrypt\nSo if you want to encrypt just use [-e] and for decrypt [-d]");
+            Get.WriteL("Some special modes are also : -encrypt-all \n encrypt-all \n -e-all");
+            Get.Blue();
+			Get.WriteL("Password: this argument is the password on plain text for the file");
+			Get.Yellow();
+			Get.WriteL("VI: Stands for the vector for the password you could use the same password\nhere or if you wish you could just type null \nand it will auto generate one for you");
+			Get.WriteL("Recomended Argument: null");
+			Get.Red("OutFile: is the output file for the encryption \navoid providing the same \n file just in case something goes wrong but if you don't mine");
+			Get.Red("Recomended Argument: same");
+			Get.Reset();
+
+			Get.White("Examples: ");
+			Get.Yellow("Encription");
+			Get.White();
+			Console.Write("File.txt ");
+			Get.Green();
+			Console.Write("-e ");
+			Get.Blue();
+			Console.Write("securePassword1234 ");
+			Get.Yellow();
+			Console.Write("null ");
+			Get.Red();
+			Console.Write("New_File.txt");
+			Get.WriteL("");
+			Get.Yellow("Decrypting");
+			Get.White();
+			Console.Write("New_File.txt ");
+			Get.Green();
+			Console.Write("-d ");
+			Get.Blue();
+			Console.Write("securePassword1234 ");
+			Get.Yellow();
+			Console.Write("null ");
+			Get.Red();
+			Console.Write("Decrypted_File.txt");
+			Console.WriteLine("\n");
+			Console.ResetColor();
+		}
         static void Main(string[] args)
         {
             Get.Title("QTLSecure v3");
@@ -97,6 +165,11 @@ namespace QTLSecure
                 }
                 else
                 {
+                    if(args.Length == 1)
+                    {
+                        PrintHelp();
+                        return;
+                    }
                     if (args.Length == 5)
                     {
 
@@ -115,8 +188,8 @@ namespace QTLSecure
                             return;
                         }
                         switch (mode)
-                        {
-                            case "-encrypt-all":
+						{//-encrypt-all \n encrypt-all \n -e-all"
+							case "-encrypt-all":
                             case "encrypt-all":
                             case "-e-all":
                                     
@@ -229,70 +302,8 @@ namespace QTLSecure
                     else
                     {
                         Get.Yellow($"Incorrect Amount of arguments given");
-                        Get.Yellow("The Format is the fallowing: ");
-                        Get.Yellow("Encription");
-                        Get.White();
-                        Console.Write("File ");
-                        Get.Green();
-                        Console.Write("-e ");
-                        Get.Blue();
-                        Console.Write("Password ");
-                        Get.Yellow();
-                        Console.Write("IV ");
-                        Get.Red();
-                        Console.Write("OutFile");
-                        Get.WriteL("");
-                        Get.Yellow("Decrypting");
-                        Get.White();
-                        Console.Write("File ");
-                        Get.Green();
-                        Console.Write("-d ");
-                        Get.Blue();
-                        Console.Write("Password ");
-                        Get.Yellow();
-                        Console.Write("IV ");
-                        Get.Red();
-                        Console.Write("OutFile");
-                        Console.WriteLine("\n");
-                        Get.White();
-                        Get.WriteL("File: The fist argument is the file that you wish to encrypt");
-                        Get.Green();
-                        Get.WriteL("-e or -d: \n-e = Encrypt\n-d = Decrypt\nSo if you want to encrypt just use [-e] and for decrypt [-d]");
-                        Get.Blue();
-                        Get.WriteL("Password: this argument is the password on plain text for the file");
-                        Get.Yellow();
-                        Get.WriteL("VI: Stands for the vector for the password you could use the same password\nhere or if you wish you could just type null \nand it will auto generate one for you");
-                        Get.WriteL("Recomended Argument: null");
-                        Get.Red("OutFile: is the output file for the encryption \navoid providing the same \n file just in case something goes wrong but if you don't mine");
-                        Get.Red("Recomended Argument: same");
-                        Get.Reset();
-
-                        Get.White("Examples: ");
-                        Get.Yellow("Encription");
-                        Get.White();
-                        Console.Write("File.txt ");
-                        Get.Green();
-                        Console.Write("-e ");
-                        Get.Blue();
-                        Console.Write("securePassword1234 ");
-                        Get.Yellow();
-                        Console.Write("null ");
-                        Get.Red();
-                        Console.Write("New_File.txt");
-                        Get.WriteL("");
-                        Get.Yellow("Decrypting");
-                        Get.White();
-                        Console.Write("New_File.txt ");
-                        Get.Green();
-                        Console.Write("-d ");
-                        Get.Blue();
-                        Console.Write("securePassword1234 ");
-                        Get.Yellow();
-                        Console.Write("null ");
-                        Get.Red();
-                        Console.Write("Decrypted_File.txt");
-                        Console.WriteLine("\n");
-                        Console.ResetColor();
+                        PrintHelp();
+                        return;
                     }
 
 
