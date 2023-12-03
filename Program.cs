@@ -211,12 +211,25 @@ namespace QTLSecure
                                         file = files[item];
                                         secure.OutFile = file;//outFile == "same" ? file : outFile;
                                         secure.AllowDebugger = true;
-                                        secure.EncryptFile(file, password, secure.CreatePassword(iv=="null" ? "NULL" : iv));
+                                        try
+                                        {
+                                            secure.EncryptFile(file, password, secure.CreatePassword(iv=="null" ? "NULL" : iv));
+                                        }
+                                        catch(Exception ex)
+                                        {
+											string msg = $"The File: {files[item]} Fail To Be encrypted";
+											Get.Red(msg);
+											error.Add(new Error()
+											{
+												Message = ex.Message,
+												Type = msg
+											});
+										}
                                         current =item;
                                         str = $"Current Status: {Get.Status(current, goal)}";
                                         CurrentJobStatus = str;
                                         Get.Title(str);
-                                        GC.Collect();
+                                       
                                     }
                                     catch (Exception ex)
                                     {
@@ -261,8 +274,22 @@ namespace QTLSecure
                                         file = files[item];
                                         secure.OutFile = outFile == "same" ? file : outFile;
                                         secure.AllowDebugger = true;
-                                        secure.DecryptFile(file, password, secure.CreatePassword(iv=="null" ? "NULL" : iv));
-                                        current =item;
+                                        try
+                                        {
+                                            secure.DecryptFile(file, password, secure.CreatePassword(iv=="null" ? "NULL" : iv));
+										}
+										catch (Exception ex)
+										{
+											string msg = $"The File: {files[item]} Fail To Be decrypted";
+											Get.Red(msg);
+											error.Add(new Error()
+											{
+												Message = ex.Message,
+												Type = msg
+											});
+
+										}
+										current =item;
                                         str = $"Current Status: {Get.Status(current, goal)}";
                                         CurrentJobStatus = str;
                                         Get.Title(str);
