@@ -41,11 +41,12 @@ namespace QTLSecure
 			Get.Red();
 			Console.Write("OutFile");
 			Console.WriteLine("\n");
-			Get.White();
+            Get.White();
 			Get.WriteL("File: The fist argument is the file that you wish to encrypt");
 			Get.Green();
 			Get.WriteL("-e or -d: \n-e = Encrypt\n-d = Decrypt\nSo if you want to encrypt just use [-e] and for decrypt [-d]");
-            Get.WriteL("Some special modes are also : -encrypt-all \n encrypt-all \n -e-all");
+            Get.WriteL("Some special modes are also :\n -encrypt-all \n encrypt-all \n -e-all \n And almost the smae for " +
+            "Decrypting it: -decrypt-all \n decrypt-all \n -d-all");
             Get.Blue();
 			Get.WriteL("Password: this argument is the password on plain text for the file");
 			Get.Yellow();
@@ -172,7 +173,7 @@ namespace QTLSecure
                     }
                     if (args.Length == 5)
                     {
-
+                        
                         file = args[0];
                         mode = args[1];
                         password = args[2];
@@ -208,14 +209,14 @@ namespace QTLSecure
                                     try
                                     {
                                         file = files[item];
-                                        secure.OutFile = outFile == "same" ? file : outFile;
+                                        secure.OutFile = file;//outFile == "same" ? file : outFile;
                                         secure.AllowDebugger = true;
                                         secure.EncryptFile(file, password, secure.CreatePassword(iv=="null" ? "NULL" : iv));
                                         current =item;
                                         str = $"Current Status: {Get.Status(current, goal)}";
                                         CurrentJobStatus = str;
                                         Get.Title(str);
-                                        
+                                        GC.Collect();
                                     }
                                     catch (Exception ex)
                                     {
@@ -228,8 +229,14 @@ namespace QTLSecure
 
                                     }
                                 }
-                                foreach (Error err in error) Get.Red($"{err.ToString()}");
+                                foreach (Error err in error) {
+                                    Log.Event("Failed_ToBe_Encrypted", err.ToString());
+                                Get.Red($"{err.ToString()}"); 
+                                }
+                                
                                 Get.Green($"{files.Count - error.Count} Files Sucessfully Encrypted!!!");
+                                                               if (error.Count > 0) Get.Red($"Failled: {error.Count}");
+
                                 Get.Yellow($"Time: {check.Stop()}");
                                 Console.Beep();
 
@@ -272,8 +279,14 @@ namespace QTLSecure
 
                                     }
                                 }
-                                foreach (Error err in error) Get.Red($"{err.ToString()}");
+                                foreach (Error err in error)
+                                {
+									Log.Event("Failed_ToBe_Decrypted", err.ToString());
+
+									Get.Red($"{err.ToString()}"); 
+                                }
                                 Get.Green($"{files.Count - error.Count} Files Sucessfully Decrypted!!!");
+                                if (error.Count > 0) Get.Red($"Failled: {error.Count}");
                                 Get.Yellow($"Time: {check.Stop()}");
                                 Console.Beep();
 
